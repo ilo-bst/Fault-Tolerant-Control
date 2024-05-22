@@ -64,5 +64,5 @@ system.simulate_with_noise()
   
 ### Contributors
 Ilona Basset
-Mikhail
+Mikhail Mishustin
 Ruslan Gladilov

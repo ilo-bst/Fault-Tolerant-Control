@@ -20,6 +20,7 @@ Clone the repository:
 ```bash
 git clone https://github.com/yourusername/Fault-Tolerant-Control.git
 cd fault-tolerant-control
+```
 
 Install dependencies:
 ```bash

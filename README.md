@@ -63,6 +63,6 @@ system.simulate_with_noise()
 - Test on a simpler system like Inverted Pendulum.
   
 ### Contributors
-Ilona Basset
-Mikhail Mishustin
+Ilona Basset,
+Mikhail Mishustin,
 Ruslan Gladilov

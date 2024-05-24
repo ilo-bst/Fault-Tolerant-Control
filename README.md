@@ -55,7 +55,8 @@ system.simulate_with_noise()
 
 ### Current Status
 - Basic control system implemented.
-- Preliminary tests show that the additional term does not significantly improve performance under noise.
+- Preliminary tests show that the additional term improve performance under noise. Cart does not go left as much as without that term. The angle stabilization works pretty good in both cases.
+
   
 ### Future Work
 - Refine fault detection and isolation algorithms.

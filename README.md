@@ -55,7 +55,7 @@ system.simulate_with_noise()
 
 ### Current Status
 - Basic control system implemented.
-- Preliminary tests show that the additional term improve performance under noise. Cart does not go left as much as without that term. The angle stabilization works pretty good in both cases.
+- Preliminary tests indicate that the inclusion of the additional term enhances performance under noisy conditions. Specifically, the cart exhibits reduced leftward deviation when the term is applied. Furthermore, angle stabilization is effective in both cases
 
   
 ### Future Work

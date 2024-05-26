@@ -25,7 +25,7 @@ class MyCartPole(CartPole): # MyCartPoleFault
             prototype=(state, inputs),
         )
 
-        m_c, m_p, g, l = (
+        mass_cart, mass_pole, grav_const, length_pole = (
             self.parameters["m_c"],
             self.parameters["m_p"],
             self.parameters["g"],
@@ -48,11 +48,12 @@ class MyCartPole(CartPole): # MyCartPoleFault
         
         Dstate[0] = omega + noise_theta_dot # derivative of \vartheta 
         Dstate[1] =  vel + noise_x_dot # derivative of x
-        Dstate[2] = (g * sin_theta * (m_p + m_c) - cos_theta * (Force + m_p * \
-        l * sin_theta * omega**2 ) ) / (4 * l / 3 * (m_c + m_p) - l * m_p * cos_theta**2)\
-         + noise_omega_dot # derivative of \omega
-        Dstate[3] = ( Force + m_p * l * (omega**2 * sin_theta - Dstate[2] * \
-        cos_theta)) / (m_p + m_c) + noise_vel_dot # derivative of v_x
+        Dstate[2] = (grav_const * sin_theta * (mass_pole + mass_cart) - \
+        cos_theta * (Force + mass_pole * length_pole * sin_theta * omega**2)) / (4 * \
+        length_pole / 3 * (mass_cart + mass_pole) - length_pole * mass_pole * \
+        cos_theta ** 2) + noise_omega_dot # derivative of \omega
+        Dstate[3] = (Force + mass_pole * length_pole * (omega ** 2 * sin_theta - Dstate[2] * \
+        cos_theta)) / (mass_pole + mass_cart) + noise_vel_dot # derivative of v_x
 
         return Dstate
 

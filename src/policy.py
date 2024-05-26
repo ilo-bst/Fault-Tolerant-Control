@@ -27,8 +27,8 @@ class CartPoleEnergyBased(Policy): # CartPoleEnergyBasedFault
         super().__init__()
         self.action_max = action_max
         self.action_min = action_min
-        self.lambd = 1.0
-        self.k = 1.0
+        self.velocity_gain = 1.0
+        self.energy_gain = 1.0
         self.learning_rate = 1.0
         self.q_hat = 0
         self.dt = 0.01
@@ -36,7 +36,7 @@ class CartPoleEnergyBased(Policy): # CartPoleEnergyBasedFault
 
     def get_action(self, observation: np.ndarray) -> np.ndarray:
         params = MyCartPole._parameters
-        m_c, m_p, g, l = (
+        mass_cart, mass_pole, grav_const, length_pole = (
             params["m_c"],
             params["m_p"],
             params["g"],
@@ -48,33 +48,25 @@ class CartPoleEnergyBased(Policy): # CartPoleEnergyBasedFault
         sin_theta = np.sin(theta)
         cos_theta = np.cos(theta)
 
-
-        energy_total = (4/6 * m_p * l**2 * omega**2 + m_p*g*l*(cos_theta - 1))
-        
-        term1 = (m_c + m_p) * self.k * (energy_total * omega * cos_theta - self.lambd*vel)
-
-        term2 = - m_p * l * omega**2 * sin_theta
-
-        term3 = 3/4 * m_p * g * sin_theta * cos_theta
-
-        term4 = - 3/4 * self.k * (energy_total * omega * cos_theta - self.lambd*vel) * m_p * cos_theta**2
-
-        g_dagger_omega = -cos_theta / (4 * l/3*(m_c + m_p) - l*m_p*cos_theta**2)
-
-        g_dagger_vel = 1/(m_c+m_p - 3/4*m_p*cos_theta**2) 
-
-        g_dag = np.linalg.pinv(np.array([[0],[0],[g_dagger_omega],[g_dagger_vel]])).reshape(4)
-
-        grad_L = np.array([-sin_theta*energy_total*m_p*g*l, 
+        energy_total = (2 / 3 * mass_pole * length_pole ** 2 * omega ** 2 \
+        + mass_pole * grav_const * length_pole * (cos_theta - 1))        
+        term1 = (mass_cart + mass_pole) * self.energy_gain * (energy_total * omega *\
+         cos_theta - self.velocity_gain * vel)
+        term2 = - mass_pole * length_pole * omega**2 * sin_theta
+        term3 = 3 / 4 * mass_pole * grav_const * sin_theta * cos_theta
+        term4 = -3 / 4 * self.energy_gain * (energy_total * omega * cos_theta - self.velocity_gain*vel)\
+         * mass_pole * cos_theta**2
+        g_dagger_omega = -cos_theta / (4 * length_pole / 3 * (mass_cart + mass_pole) -\
+         length_pole * mass_pole * cos_theta ** 2)
+        g_dagger_vel = 1 / (mass_cart + mass_pole - 3 / 4 * mass_pole * cos_theta ** 2) 
+        g_dag = np.linalg.pinv(np.array([[0], [0], [g_dagger_omega], [g_dagger_vel]])).reshape(4)
+        grad_L = np.array([-sin_theta * energy_total * mass_pole * grav_const * length_pole, 
                             0,
-                            energy_total*4/3 * l**2 * omega,
-                            m_p*l*self.lambd * vel])
-        
+                            energy_total * 4 / 3 * length_pole ** 2 * omega,
+                            mass_pole * length_pole * self.velocity_gain * vel])
         q_hat_dot = self.learning_rate * grad_L
-
-        self.q_hat += q_hat_dot* self.dt
-
-        action = term1 + term2 + term3 + term4 - 100*g_dag @ self.q_hat
+        self.q_hat += q_hat_dot * self.dt
+        action = term1 + term2 + term3 + term4 - 50 * g_dag @ self.q_hat
 
         act = np.clip(
                     soft_switch(

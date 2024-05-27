@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 ### Usage
 Run the main simulation script:
-```bash
+```
 python run.py policy=cartpole_energy_based initial_conditions=cartpole_swingup system=cartpole --interactive --fps=3
 ```
 

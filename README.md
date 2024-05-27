@@ -4,8 +4,8 @@
 This section provides a brief introduction to the project conducted as part of the Advanced Control Methods course at Skoltech in 2024. It includes the fundamental objectives of the project, information about the team members, and a link to the final presentation.
 
 - Course: Advanced Control Methods, Skoltech, 2024
-- Team Members: [Member1], [Member2], [Member3], [Member4]
-- Final Presentation: [https://docs.google.com/presentation/d/1OndUG2DB0yXjvMWQS30-TukYlxjxPwfYRwaH3VeM5bQ/edit#slide=id.p]
+- Team Members: [Ilona Basset](https://github.com/ilo-bst), [Mikhail Mishustin](https://github.com/mishkaaa31), [Ruslan Gladilov](https://github.com/RuslanGladilov)
+- Final Presentation: [link](https://docs.google.com/presentation/d/1OndUG2DB0yXjvMWQS30-TukYlxjxPwfYRwaH3VeM5bQ/edit#slide=id.p)
 
 ---
 
@@ -43,37 +43,39 @@ Step-by-step instructions on how to replicate the results obtained in this proje
 
 ### Requirements
 List of prerequisites, dependencies, and environment setup necessary to run the project.
+- Regelum 0.3.2
+- Numpy 1.26.4
+- Scipy 1.13.0
+
 
 ### Setup and Installation
-Instructions for setting up the project environment, which may include:
-- Installing dependencies: `pip install -r requirements.txt`
-- Setting up a virtual environment
-- Running a `setup.py` or `pyproject.toml` if necessary
-- Building and running a Docker container using `Dockerfile`
-
-### Running the Code
-Exact commands to execute the project, such as:
-
+Before installing the requirements, it is recommended to [create a virtual environment](https://github.com/OdinManiac/acm-2024-sem-1) for your project. And then run
 ```bash
-python main.py
+git clone https://github.com/ilo-bst/Fault-Tolerant-Control.git
+cd Fault-Tolerant-Control
+pip install -r requirements.txt
+code .
 ```
 
-### Documentation
-If available, provide links to the project documentation or instructions on how to generate it.
 
+### Running the Code
+To run fault-tolerant control:
+```bash
+python run.py policy=cartpole_energy_based initial_conditions=cartpole_swingup system=cartpole --interactive --fps=3
+```
+
+To run basic control:
+```bash
+python run.py policy=cartpole_energy_based initial_conditions=cartpole_swingup system=cartpole --interactive --fps=3
+```
 ---
 
-## Other Section
-This is a placeholder for any additional sections that the team wishes to include. It could be methodology, discussions, acknowledgments, or any other relevant content that doesn't fit into the predefined sections.
-
----
-
-## Bibliography
+## Bibliography/Links
 (If applicable) This section includes references to papers, articles, and other resources that informed the project's approach and methodology.
 
-- Reference 1
-- Reference 2
-- Reference 3
+- [CartPole](https://regelum.aidynamic.io/systems/cartpole/)
+- [Fault-tolerant-control](https://gitflic.ru/project/aidynamicaction/classedu2024-advctrl/blob?file=lectures%2Flec-6%2FNotes_240416_184536.pdf&commit=67dd87ffbb6480eeee682b23db8588f1e584c7d8)
+- [Instruction for create virtual environment](https://github.com/OdinManiac/acm-2024-sem-1)
 
 
 

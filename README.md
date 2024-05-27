@@ -32,6 +32,8 @@ Subsections may be added to further break down the problem, provide background i
 
 ## Results
 Detailed explanation of the findings, performance metrics, and outcomes of the project. This section may include graphs, tables, and other visual aids to support the results.
+![alt text](./gfx/image_without_fault.png)
+![alt text](./gfx/image_with_fault.png)
 
 ### Subsection (if any)
 Subsections may be used to organize results into categories, discuss different algorithms or methods used, or compare various scenarios within the project.

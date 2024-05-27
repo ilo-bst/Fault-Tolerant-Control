@@ -34,6 +34,7 @@ Subsections may be added to further break down the problem, provide background i
 Detailed explanation of the findings, performance metrics, and outcomes of the project. This section may include graphs, tables, and other visual aids to support the results.
 
 Without fault-tolerant control:
+
 ![alt text](./gfx/image_without_fault.png)
 
 without fault-tolerant control:

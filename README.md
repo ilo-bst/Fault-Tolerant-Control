@@ -59,19 +59,17 @@ code .
 ### Running the Code
 To run fault-tolerant control:
 ```bash
-python run.py policy=cartpole_energy_based initial_conditions=cartpole_swingup system=cartpole --interactive --fps=3
+python run.py policy=cartpole_fault initial_conditions=cartpole_swingup system=cartpole_fault --interactive --fps=3
 ```
 
 To run basic control:
 ```bash
-python run.py policy=cartpole_energy_based initial_conditions=cartpole_swingup system=cartpole --interactive --fps=3
+python run.py policy=cartpole_energy_based initial_conditions=cartpole_swingup system=cartpole_fault --interactive --fps=3
 ```
 > **Note:**
 >
 > For the `--fps` parameter, you can select any suitable value to ensure a smooth experience (e.g., `--fps=2`, `--fps=10`, `--fps=20`, etc.).
 
-
----
 
 ## Bibliography/Links
 

@@ -5,7 +5,7 @@ This section provides a brief introduction to the project conducted as part of t
 
 - Course: Advanced Control Methods, Skoltech, 2024
 - Team Members: [Member1], [Member2], [Member3], [Member4]
-- Final Presentation: [Link to Presentation]
+- Final Presentation: [https://docs.google.com/presentation/d/1OndUG2DB0yXjvMWQS30-TukYlxjxPwfYRwaH3VeM5bQ/edit#slide=id.p]
 
 ---
 

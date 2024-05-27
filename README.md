@@ -39,8 +39,6 @@ Subsections may be used to organize results into categories, discuss different a
 ---
 
 ## Run the Project
-Step-by-step instructions on how to replicate the results obtained in this project. This should be clear enough for someone with basic knowledge of the tools used to follow.
-
 ### Requirements
 List of prerequisites, dependencies, and environment setup necessary to run the project.
 - Regelum 0.3.2
@@ -68,6 +66,11 @@ To run basic control:
 ```bash
 python run.py policy=cartpole_energy_based initial_conditions=cartpole_swingup system=cartpole --interactive --fps=3
 ```
+> **Note:**
+>
+> For the `--fps` parameter, you can select any suitable value to ensure a smooth experience (e.g., `--fps=2`, `--fps=10`, `--fps=20`, etc.).
+
+
 ---
 
 ## Bibliography/Links
@@ -75,7 +78,7 @@ python run.py policy=cartpole_energy_based initial_conditions=cartpole_swingup s
 
 - [CartPole](https://regelum.aidynamic.io/systems/cartpole/)
 - [Fault-tolerant-control](https://gitflic.ru/project/aidynamicaction/classedu2024-advctrl/blob?file=lectures%2Flec-6%2FNotes_240416_184536.pdf&commit=67dd87ffbb6480eeee682b23db8588f1e584c7d8)
-- [Instruction for create virtual environment](https://github.com/OdinManiac/acm-2024-sem-1)
+- [Instruction for creating virtual environment](https://github.com/OdinManiac/acm-2024-sem-1)
 
 
 

@@ -2,7 +2,7 @@ from regelum.utils import rg
 from regelum.system import CartPole
 
 
-class MyCartPole(CartPole):  # MyCartPoleFault
+class MyCartPoleFault(CartPole):
     _dim_state = 4
     _dim_inputs = 5
     _dim_observation = 4

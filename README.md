@@ -17,13 +17,13 @@ This project aims to implement and evaluate fault-tolerant control strategies fo
 
 ### Installation
 Clone the repository:
-```bash
+```
 git clone https://github.com/yourusername/Fault-Tolerant-Control.git
 cd fault-tolerant-control
 ```
 
 Install dependencies:
-```bash
+```
 pip install -r requirements.txt
 ```
 

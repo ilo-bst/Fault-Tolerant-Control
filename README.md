@@ -1,4 +1,4 @@
-# Project Title
+# Fault-Tolerant-Control
 
 ## Overview
 This section provides a brief introduction to the project conducted as part of the Advanced Control Methods course at Skoltech in 2024. It includes the fundamental objectives of the project, information about the team members, and a link to the final presentation.
@@ -74,61 +74,12 @@ python run.py policy=cartpole_energy_based initial_conditions=cartpole_swingup s
 ---
 
 ## Bibliography/Links
-(If applicable) This section includes references to papers, articles, and other resources that informed the project's approach and methodology.
 
 - [CartPole](https://regelum.aidynamic.io/systems/cartpole/)
 - [Fault-tolerant-control](https://gitflic.ru/project/aidynamicaction/classedu2024-advctrl/blob?file=lectures%2Flec-6%2FNotes_240416_184536.pdf&commit=67dd87ffbb6480eeee682b23db8588f1e584c7d8)
 - [Instruction for creating virtual environment](https://github.com/OdinManiac/acm-2024-sem-1)
 
 
-
-
-
-
-
-
-# Fault-Tolerant-Control
-
-## Overview
-This project aims to implement and evaluate fault-tolerant control strategies for dynamic systems. The goal is to ensure system reliability and robustness in the presence of faults.
-
-## Project Structure
-
-- `policy.py`: Contains the main control algorithms and equations.
-- `system.py`: Models the system dynamics and simulates various scenarios.
-- `README.md`: This document.
-
-## Getting Started
-
-### Prerequisites
-- Python 3.x
-- Required libraries: numpy, scipy, matplotlib
-
-### Installation
-Clone the repository:
-```
-git clone https://github.com/yourusername/Fault-Tolerant-Control.git
-cd fault-tolerant-control
-```
-
-Install dependencies:
-```
-pip install -r requirements.txt
-```
-
-### Usage
-Run the main simulation script:
-```
-python run.py policy=cartpole_energy_based initial_conditions=cartpole_swingup system=cartpole --interactive --fps=3
-```
-
-### Example
-To simulate the system with noise:
-```python
-# Example code snippet
-import system
-system.simulate_with_noise()
-```
 
 # Project Details
 ### Objectives

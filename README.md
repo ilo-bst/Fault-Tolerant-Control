@@ -23,6 +23,8 @@ This section provides a brief introduction to the project conducted as part of t
 ## Problem Statement
 This section delves into the specifics of the challenge tackled during the project.  It provides context, outlines the objectives, and discusses the significance of the problem.
 
+This project aims to implement and evaluate fault-tolerant control strategies for dynamic systems. The goal is to ensure system reliability and robustness in the presence of faults.
+
 ### Subsection (if any)
 Subsections may be added to further break down the problem, provide background information, or elaborate on specific aspects that are crucial to understanding the project's scope.
 

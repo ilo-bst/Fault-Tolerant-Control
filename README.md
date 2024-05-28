@@ -43,9 +43,6 @@ with using fault-tolerant control:
 
 ![alt text](./gfx/image_with_fault.png)
 
-### Subsection (if any)
-Subsections may be used to organize results into categories, discuss different algorithms or methods used, or compare various scenarios within the project.
-
 ---
 
 ## Run the Project

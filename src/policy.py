@@ -134,7 +134,7 @@ class CartPoleEnergyBased(Policy):
         ) * mass_pole * cos_theta**2
         u = p1 + p2 + p3 + p4
 
-                return np.array(
+        return np.array(
             [
                 [
                     np.clip(

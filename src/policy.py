@@ -62,7 +62,7 @@ class CartPoleFault(Policy):
             mass_cart + mass_pole
         ) - length_pole * mass_pole * cos_theta ** 2)
         g_dagger_vel = 1 / (
-            mass_cart + mass_pole - 3 / 4 * mass_pole * cos_theta ** 2
+            mass_cart + mass_pole
         )
         g_dag = np.linalg.pinv(np.array([
             [0],
@@ -93,8 +93,8 @@ class CartPoleFault(Policy):
                 [
                     act,
                     np.random.normal(0, 1),
-                    np.random.normal(0, 2),
-                    np.random.normal(0, 2),
+                    np.random.normal(0, 1),
+                    np.random.normal(0, 1),
                     np.random.normal(0, 1)
                 ]
             ]
@@ -134,14 +134,22 @@ class CartPoleEnergyBased(Policy):
         ) * mass_pole * cos_theta**2
         u = p1 + p2 + p3 + p4
 
-        return np.array(
+                return np.array(
             [
                 [
                     np.clip(
-                        u,
+                        soft_switch(
+                            signal1=u,
+                            signal2=pd_control(observation),
+                            gate=np.cos(theta),
+                        ),
                         self.action_min,
                         self.action_max,
-                    )
+                    ),
+                    np.random.normal(0, 1),
+                    np.random.normal(0, 1),
+                    np.random.normal(0, 1),
+                    np.random.normal(0, 1)
                 ]
             ]
         )

@@ -39,7 +39,7 @@ Without fault-tolerant control:
 ![alt text](./gfx/image_without_fault.png)
 
 with using fault-tolerant control:
-
+ 
 ![alt text](./gfx/image_with_fault.png)
 
 ### Subsection (if any)

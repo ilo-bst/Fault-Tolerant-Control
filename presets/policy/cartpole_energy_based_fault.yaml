@@ -1,4 +1,0 @@
-_target_: src.policy.CartPoleEnergyBasedFault
-
-action_min: -500
-action_max: 500

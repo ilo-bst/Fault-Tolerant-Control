@@ -31,13 +31,14 @@ Subsections may be added to further break down the problem, provide background i
 ---
 
 ## Results
-Detailed explanation of the findings, performance metrics, and outcomes of the project. This section may include graphs, tables, and other visual aids to support the results.
-
+We added noise in different coordinates.
+The result is the following:
+The FTC works by adding noise to any coordinates. Conventional energy-based control from hw1 does not work if noise is added to any coordinate.
 Without fault-tolerant control:
 
 ![alt text](./gfx/image_without_fault.png)
 
-without fault-tolerant control:
+with using fault-tolerant control:
 
 ![alt text](./gfx/image_with_fault.png)
 

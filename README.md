@@ -1,7 +1,7 @@
 # Fault-Tolerant-Control
 
 ## Overview
-This section provides a brief introduction to the project conducted as part of the Advanced Control Methods course at Skoltech in 2024. It includes the fundamental objectives of the project, information about the team members, and a link to the final presentation.
+This project aims to implement and evaluate fault-tolerant control strategies for dynamic systems. The goal is to ensure system reliability and robustness in the presence of faults.
 
 - Course: Advanced Control Methods, Skoltech, 2024
 - Team Members: [Ilona Basset](https://github.com/ilo-bst), [Mikhail Mishustin](https://github.com/mishkaaa31), [Ruslan Gladilov](https://github.com/RuslanGladilov)
@@ -21,12 +21,12 @@ This section provides a brief introduction to the project conducted as part of t
 ---
 
 ## Problem Statement
-This section delves into the specifics of the challenge tackled during the project.  It provides context, outlines the objectives, and discusses the significance of the problem.
 
-This project aims to implement and evaluate fault-tolerant control strategies for dynamic systems. The goal is to ensure system reliability and robustness in the presence of faults.
-
-### Subsection (if any)
-Subsections may be added to further break down the problem, provide background information, or elaborate on specific aspects that are crucial to understanding the project's scope.
+The need for stabilizing dynamic systems in the presence of faults exists. The objective is to implement and evaluate fault-tolerant control strategy for the Cartpole system.
+Tasks to be done:
+- develop a fault-tolerant control system;
+- test the system under various fault conditions and noise levels;
+- evaluate the impact of additional control terms on system performance.
 
 ---
 
@@ -86,32 +86,3 @@ python run.py policy=cartpole_energy_based initial_conditions=cartpole_swingup s
 - [CartPole](https://regelum.aidynamic.io/systems/cartpole/)
 - [Fault-tolerant-control](https://gitflic.ru/project/aidynamicaction/classedu2024-advctrl/blob?file=lectures%2Flec-6%2FNotes_240416_184536.pdf&commit=67dd87ffbb6480eeee682b23db8588f1e584c7d8)
 - [Instruction for creating virtual environment](https://github.com/OdinManiac/acm-2024-sem-1)
-
-
-
-# Project Details
-### Objectives
-- Develop a fault-tolerant control system.
-- Test the system under various fault conditions and noise levels.
-- Evaluate the impact of additional control terms on system performance.
-  
-### Approach
-- System Modeling: Define the system equations and control laws.
-- Fault Detection: Implement methods to detect and isolate faults.
-- Control Reconfiguration: Adjust control strategies to maintain performance despite faults.
-- Parameter Tuning: Optimize hyperparameters for robustness.
-
-### Current Status
-- Basic control system implemented.
-- Preliminary tests show that the additional term improve performance under noise. Cart does not go left as much as without that term. The angle stabilization works pretty good in both cases.
-
-  
-### Future Work
-- Refine fault detection and isolation algorithms.
-- Explore different control reconfiguration strategies.
-- Test on a simpler system like Inverted Pendulum.
-  
-### Contributors
-Ilona Basset,
-Mikhail Mishustin,
-Ruslan Gladilov

@@ -34,12 +34,13 @@ Subsections may be added to further break down the problem, provide background i
 We tried adding noise in different coordinates.
 The result is the following:
 The fault-tolerant control works by adding noise to any coordinates much faster than conventional energy-based control from hw1.
+
 Without fault-tolerant control:
 
 ![alt text](./gfx/image_without_fault.png)
 
 with using fault-tolerant control:
- 
+
 ![alt text](./gfx/image_with_fault.png)
 
 ### Subsection (if any)

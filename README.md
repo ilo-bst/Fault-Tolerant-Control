@@ -30,6 +30,8 @@ Tasks to be done:
 
 The problem statement is as follows, there is a system of differential equations describing the dynamics of the system, the peculiarity of this system is that there is noise at each coordinate. We conducted the tests under the assumption that the noise is from a normal distribution.
 
+The goal was to choose the control so that this system would stabilize.
+
 ![alt text](./gfx/system_equation.png)
 
 ---

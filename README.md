@@ -34,6 +34,7 @@ Subsections may be added to further break down the problem, provide background i
 We added noise in different coordinates.
 The result is the following:
 The FTC works by adding noise to any coordinates. Conventional energy-based control from hw1 does not work if noise is added to any coordinate.
+
 Without fault-tolerant control:
 
 ![alt text](./gfx/image_without_fault.png)

@@ -50,12 +50,12 @@ class CartPoleFault(Policy):
 
         energy_total = 2 / 3 * mass_pole * length_pole ** 2 * omega ** 2\
             + mass_pole * grav_const * length_pole * (cos_theta - 1)
-        term1 = (mass_cart + mass_pole) * self.energy_gain * (
+        p1 = (mass_cart + mass_pole) * self.energy_gain * (
             energy_total * omega * cos_theta - self.velocity_gain * vel
         )
-        term2 = - mass_pole * length_pole * omega**2 * sin_theta
-        term3 = 3 / 4 * mass_pole * grav_const * sin_theta * cos_theta
-        term4 = -3 / 4 * self.energy_gain * (
+        p2 = - mass_pole * length_pole * omega**2 * sin_theta
+        p3 = 3 / 4 * mass_pole * grav_const * sin_theta * cos_theta
+        p4 = -3 / 4 * self.energy_gain * (
             energy_total * omega * cos_theta - self.velocity_gain * vel
         ) * mass_pole * cos_theta**2
         g_dagger_omega = -cos_theta / (4 * length_pole / 3 * (
@@ -78,11 +78,11 @@ class CartPoleFault(Policy):
         )
         q_hat_dot = self.learning_rate * grad_L
         self.q_hat += q_hat_dot * self.dt
-        action = term1 + term2 + term3 + term4 - g_dag @ self.q_hat
+        u = p1 + p2 + p3 + p4 - g_dag @ self.q_hat
 
         act = np.clip(
                     soft_switch(
-                            signal1=action,
+                            signal1=u,
                             signal2=pd_control(observation),
                             gate=np.cos(theta),
                         ), self.action_min, self.action_max,
@@ -124,21 +124,21 @@ class CartPoleEnergyBased(Policy):
         cos_theta = np.cos(theta)
         energy_total = 2 / 3 * mass_pole * length_pole ** 2 * omega ** 2\
             + mass_pole * grav_const * length_pole * (cos_theta - 1)
-        term1 = (mass_cart + mass_pole) * self.energy_gain * (
+        p1 = (mass_cart + mass_pole) * self.energy_gain * (
             energy_total * omega * cos_theta - self.velocity_gain * vel
         )
-        term2 = - mass_pole * length_pole * omega**2 * sin_theta
-        term3 = 3 / 4 * mass_pole * grav_const * sin_theta * cos_theta
-        term4 = -3 / 4 * self.energy_gain * (
+        p2 = - mass_pole * length_pole * omega**2 * sin_theta
+        p3 = 3 / 4 * mass_pole * grav_const * sin_theta * cos_theta
+        p4 = -3 / 4 * self.energy_gain * (
             energy_total * omega * cos_theta - self.velocity_gain * vel
         ) * mass_pole * cos_theta**2
-        action = term1 + term2 + term3 + term4
+        u = p1 + p2 + p3 + p4
 
         return np.array(
             [
                 [
                     np.clip(
-                        action,
+                        u,
                         self.action_min,
                         self.action_max,
                     )
